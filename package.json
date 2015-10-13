@@ -1,14 +1,25 @@
 {
   "name": "shuv",
   "version": "1.0.0",
-  "description": "",
+  "description": "Partial application. Shuv args around the place.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "tape": "^4.2.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoryNunn/shuv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoryNunn/shuv/issues"
+  },
+  "homepage": "https://github.com/KoryNunn/shuv#readme"
 }
