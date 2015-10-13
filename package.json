@@ -4,10 +4,10 @@
   "description": "Partial application. Shuv args around the place.",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "node ./test"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "tape": "^4.2.1"
   },
@@ -21,5 +21,17 @@
   "bugs": {
     "url": "https://github.com/KoryNunn/shuv/issues"
   },
-  "homepage": "https://github.com/KoryNunn/shuv#readme"
+  "homepage": "https://github.com/KoryNunn/shuv#readme",
+  "keywords":[
+    "shove",
+    "partial",
+    "application",
+    "curry",
+    "arguments",
+    "position",
+    "remove",
+    "placeholder",
+    "function",
+    "method"
+  ]
 }
