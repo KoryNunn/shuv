@@ -5,6 +5,10 @@ var placeholder = {},
 function shuv(fn){
     var outerArgs = slice(arguments, 1);
 
+    if(typeof fn !== 'function'){
+        throw new Error('No or non-function passed to shuv');
+    }
+
     return function(){
         var context = this,
             innerArgs = slice(arguments),
