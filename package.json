@@ -1,6 +1,6 @@
 {
   "name": "shuv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Partial application. Shuv args around the place.",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/KoryNunn/shuv/issues"
   },
   "homepage": "https://github.com/KoryNunn/shuv#readme",
-  "keywords":[
+  "keywords": [
     "shove",
     "partial",
     "application",
