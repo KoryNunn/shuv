@@ -79,3 +79,40 @@ test('context', function(t){
 
     shuvved.call(context, 5, 6);
 });
+
+test('get key', function(t){
+    t.plan(1);
+
+    function foo(a){
+        t.equal(a, 1);
+    }
+
+    var shuvved = shuv(foo, _('a'));
+
+    shuvved({a: 1});
+});
+
+test('transform', function(t){
+    t.plan(1);
+
+    function foo(a){
+        t.equal(a, 1);
+    }
+
+    var shuvved = shuv(foo, _(x => x.a));
+
+    shuvved({a: 1});
+});
+
+test('ignore', function(t){
+    t.plan(2);
+
+    function foo(error, result){
+        t.equal(error, undefined);
+        t.equal(result, 5);
+    }
+
+    var shuvved = shuv(foo, _());
+
+    shuvved(new Error(), 5);
+});

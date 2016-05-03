@@ -1,6 +1,12 @@
-var placeholder = {},
-    endOfArgs = {},
+var endOfArgs = {},
     slice = Array.prototype.slice.call.bind(Array.prototype.slice);
+
+function placeholder(transform){
+    return {
+        transform: transform,
+        placeholder: placeholder
+    };
+}
 
 function shuv(fn){
     var outerArgs = slice(arguments, 1);
@@ -25,6 +31,24 @@ function shuv(fn){
 
             if(outerArg === placeholder){
                 finalArgs.push(innerArgs.shift());
+                continue;
+            }
+
+            if(outerArg && typeof outerArg === 'object' && 'placeholder' in outerArg){
+                var arg = innerArgs.shift(),
+                    transform = outerArg.transform,
+                    result;
+
+                if(transform != null){
+                    if(typeof transform === 'function'){
+                        result = transform(arg);
+                    }else{
+                        result = arg[transform];
+                    }
+                }
+
+                finalArgs.push(result);
+
                 continue;
             }
 
